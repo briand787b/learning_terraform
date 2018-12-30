@@ -1,0 +1,14 @@
+* Keeping all infrastucture configuration in one folder or terraform file makes every
+part of the infrastucture vulnerable to breakage every time any part of the infrastructure
+is updated.
+* To avoid this, keep every part of the infrastructure that can be isolated in its own
+directory, thus with its own state file.
+* Guideline:
+    a) Isolate by environment (staging, production, etc)
+    b) Isolate by component (vpc, services, databases)
+
+* Each folder will also contain organized terraform configuration files:
+    a) vars.tf - Input variables
+    b) outputs.tf - Output variables
+    c) main.tf - The actual resources
+
